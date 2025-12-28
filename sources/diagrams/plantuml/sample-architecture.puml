@@ -1,0 +1,48 @@
+@startuml sample-architecture
+!theme blueprint
+
+title システムアーキテクチャ図
+
+' 外部アクターの定義
+actor "ユーザー" as User
+actor "管理者" as Admin
+
+' システム境界
+rectangle "Webアプリケーション" {
+    component "フロントエンド" as Frontend #lightblue
+    component "認証サービス" as Auth #lightgreen
+    component "APIゲートウェイ" as Gateway #orange
+
+    rectangle "マイクロサービス群" {
+        component "ユーザーサービス" as UserService #lightcyan
+        component "データサービス" as DataService #lightcyan
+        component "通知サービス" as NotifyService #lightcyan
+    }
+}
+
+' 外部システム
+database "データベース\nクラスター" as DB #lightgray
+cloud "外部API\nサービス" as ExternalAPI #lightyellow
+
+' 関係性の定義
+User --> Frontend : HTTPS
+Admin --> Frontend : HTTPS
+
+Frontend --> Auth : 認証
+Frontend --> Gateway : API呼び出し
+
+Gateway --> UserService : ルーティング
+Gateway --> DataService : ルーティング
+Gateway --> NotifyService : ルーティング
+
+UserService --> DB : データ操作
+DataService --> DB : データ操作
+DataService --> ExternalAPI : 外部連携
+
+NotifyService --> ExternalAPI : 通知送信
+
+' ノート
+note right of DB : PostgreSQL\nレプリケーション構成
+note right of ExternalAPI : REST API\nオープンAPIスキーマ
+
+@enduml

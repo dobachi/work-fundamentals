@@ -1,0 +1,151 @@
+---
+title: "技術動向調査報告書"
+subtitle: "Quarto利用のデモンストレーション"
+author:
+  - name: サンプル執筆者
+    affiliation: サンプル組織
+    email: sample@example.com
+date: today
+lang: ja
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    theme: journal
+  pdf:
+    documentclass: scrbook
+    toc: true
+    number-sections: true
+    geometry: margin=2cm
+    mainfont: "Noto Sans CJK JP"
+    pdf-engine: xelatex
+  docx: default
+bibliography: ../sources/references/bibliography.bib
+---
+
+# エグゼクティブサマリ {.unnumbered}
+
+このサンプル報告書は、Quartoを使用した調査報告書作成のデモンストレーションです。
+
+**主要な発見事項**:
+
+- Quartoは次世代の科学技術出版システムである
+- Markdown記法で簡単に高品質な文書を作成できる
+- HTML、PDF、EPUBなど複数形式への出力をサポート
+
+# はじめに
+
+## 調査の背景
+
+Quartoは、Pandocベースのオープンソース科学技術出版システムです。RやPython、Juliaなど複数のプログラミング言語をサポートし、再現可能な研究を支援します。
+
+## 調査の目的
+
+本報告書は、以下を目的としています：
+
+1. Quartoの基本機能のデモンストレーション
+2. テンプレート利用の実例提示
+3. 報告書作成のベストプラクティス紹介
+
+## 調査方法
+
+- 文献調査
+- 公式ドキュメントの参照
+- 実践的な検証
+
+# 調査結果
+
+## 基本機能
+
+### 数式表現
+
+Quartoでは、LaTeX記法で数式を記述できます：
+
+$$
+E = mc^2
+$$
+
+インライン数式も使用可能です: $\alpha + \beta = \gamma$
+
+### コードブロック
+
+```python
+def hello_world():
+    print("Hello, Quarto!")
+    return True
+```
+
+### 表組み
+
+| 項目 | 説明 | 重要度 |
+|------|------|--------|
+| Markdown | 基本記法 | 高 |
+| Quarto | 出版システム | 高 |
+| LaTeX | 数式記法 | 中 |
+
+: 使用技術の概要 {#tbl-tech}
+
+@tbl-tech に示すように、複数の技術を組み合わせています。
+
+### 箇条書き
+
+**特徴**:
+
+- シンプルな記法
+- 多様な出力形式
+- 強力な相互参照機能
+
+**利点**:
+
+1. 学習コストが低い
+2. 再現可能性が高い
+3. バージョン管理が容易
+
+## 高度な機能
+
+### 図の挿入
+
+Quartoでは画像を簡単に挿入し、キャプションと相互参照を付けることができます。
+
+![Quartoのロゴ。科学技術出版のためのオープンソースシステムを象徴しています。](https://quarto.org/quarto.png){#fig-quarto-logo}
+
+@fig-quarto-logo に示すように、Quartoは視覚的にも分かりやすいブランディングを持っています。
+
+### 相互参照
+
+図や表への参照が自動的に番号付けされます。
+
+### 参考文献
+
+BibTeX形式の参考文献を使用できます[@cite2024example]。
+
+# 考察
+
+Quartoは調査報告書作成に適したツールです。Markdown記法のシンプルさと、LaTeXの表現力を兼ね備えています。
+
+## 利点
+
+- **シンプル**: Markdown記法で簡単に記述
+- **パワフル**: 複雑な数式や図表にも対応
+- **柔軟**: 複数の出力形式をサポート
+
+## 課題
+
+- 日本語PDF生成にはXeLaTeXとフォント設定が必要
+- 初回環境構築に若干の手間がかかる
+
+# 結論
+
+Quartoは、調査報告書作成に非常に有用なツールです。このテンプレートを活用することで、高品質な報告書を効率的に作成できます。
+
+## 推奨事項
+
+1. テンプレートをコピーして使用開始
+2. `_quarto.yml`でプロジェクト全体の設定を管理
+3. `bibliography.bib`で参考文献を一元管理
+
+# 参考文献 {.unnumbered}
+
+::: {#refs}
+:::

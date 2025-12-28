@@ -1,0 +1,1 @@
+../instructions/ai_instruction_kits/scripts/generate-instruction.sh

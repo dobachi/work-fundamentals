@@ -1,0 +1,70 @@
+digraph network_topology {
+    // グラフ全体の設定
+    rankdir=TB;
+    node [shape=box, style=filled, fontname="Arial"];
+    edge [fontname="Arial"];
+
+    // クラスタリング（サブネット）
+    subgraph cluster_dmz {
+        label="DMZ";
+        style=filled;
+        color=lightgrey;
+
+        loadbalancer [label="ロードバランサ\n(HAProxy)", fillcolor=lightblue];
+        webserver1 [label="Webサーバー1\n(Nginx)", fillcolor=lightgreen];
+        webserver2 [label="Webサーバー2\n(Nginx)", fillcolor=lightgreen];
+    }
+
+    subgraph cluster_internal {
+        label="内部ネットワーク";
+        style=filled;
+        color=lightcyan;
+
+        appserver1 [label="アプリサーバー1\n(Node.js)", fillcolor=orange];
+        appserver2 [label="アプリサーバー2\n(Node.js)", fillcolor=orange];
+
+        subgraph cluster_data {
+            label="データ層";
+            style=filled;
+            color=mistyrose;
+
+            database [label="マスターDB\n(PostgreSQL)", fillcolor=pink];
+            database_slave [label="スレーブDB\n(PostgreSQL)", fillcolor=lightpink];
+            redis [label="キャッシュ\n(Redis)", fillcolor=red, fontcolor=white];
+        }
+    }
+
+    // 外部要素
+    internet [label="インターネット", shape=cloud, fillcolor=yellow];
+    firewall [label="ファイアウォール", fillcolor=red, fontcolor=white];
+
+    // 接続関係
+    internet -> firewall [label="HTTPS:443"];
+    firewall -> loadbalancer [label="HTTP:80"];
+
+    loadbalancer -> webserver1 [label="HTTP:8080"];
+    loadbalancer -> webserver2 [label="HTTP:8080"];
+
+    webserver1 -> appserver1 [label="API"];
+    webserver1 -> appserver2 [label="API"];
+    webserver2 -> appserver1 [label="API"];
+    webserver2 -> appserver2 [label="API"];
+
+    appserver1 -> database [label="SQL"];
+    appserver1 -> redis [label="Cache"];
+    appserver2 -> database [label="SQL"];
+    appserver2 -> redis [label="Cache"];
+
+    database -> database_slave [label="レプリケーション", style=dashed];
+
+    // 凡例
+    subgraph cluster_legend {
+        label="凡例";
+        style=filled;
+        color=white;
+
+        legend_web [label="Webサーバー", fillcolor=lightgreen, shape=box];
+        legend_app [label="アプリサーバー", fillcolor=orange, shape=box];
+        legend_db [label="データベース", fillcolor=pink, shape=box];
+    }
+}

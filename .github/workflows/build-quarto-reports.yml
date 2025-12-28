@@ -1,0 +1,156 @@
+name: Build and Deploy GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'examples/**/*.qmd'
+      - 'index.qmd'
+      - '_quarto.yml'
+      - 'templates/styles/**'
+      - 'sources/references/**'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: Build Examples and Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+
+    - name: Install LaTeX and fonts for PDF generation
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          texlive-latex-base \
+          texlive-latex-recommended \
+          texlive-latex-extra \
+          texlive-fonts-recommended \
+          texlive-fonts-extra \
+          texlive-xetex \
+          texlive-luatex \
+          fonts-noto-cjk \
+          fonts-noto-cjk-extra \
+          librsvg2-bin
+
+    - name: Verify Quarto installation
+      run: |
+        quarto --version
+        quarto check
+
+    - name: Build website
+      run: |
+        echo "📚 Building examples and website..."
+        # index.qmdを個別にビルド（シンボリックリンクの問題を回避）
+        quarto render index.qmd --output-dir output
+        # examples/とtemplates/README.mdをビルド
+        quarto render
+        echo "✅ Build complete"
+
+    - name: Build PDF and DOCX formats
+      run: |
+        echo "📄 Building PDF and DOCX formats for examples..."
+        mkdir -p output/downloads
+
+        # examples配下の各.qmdファイルをPDF/DOCX形式でレンダリング
+        for qmd_file in examples/*.qmd; do
+          if [ -f "$qmd_file" ]; then
+            echo "Processing $qmd_file..."
+            base_name=$(basename "$qmd_file" .qmd)
+
+            # PDF生成
+            echo "  Generating PDF..."
+            quarto render "$qmd_file" --to pdf --output "output/downloads/${base_name}.pdf"
+
+            # DOCX生成
+            echo "  Generating DOCX..."
+            quarto render "$qmd_file" --to docx --output "output/downloads/${base_name}.docx"
+          fi
+        done
+
+        echo "✅ PDF/DOCX generation complete"
+
+    - name: List output
+      run: |
+        echo "Generated files:"
+        ls -la output/
+        echo ""
+        echo "Downloads directory:"
+        ls -la output/downloads/ || echo "No downloads directory"
+        find output/ -type f | head -30
+
+    - name: Upload PDF/DOCX artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: reports-pdf-docx
+        path: output/downloads/
+        retention-days: 90
+
+    - name: Setup Pages
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: actions/configure-pages@v4
+
+    - name: Upload artifact
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: output/
+
+    - name: Deploy to GitHub Pages
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+    - name: Generate deployment summary
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        echo "## 🚀 Deployment Results" >> $GITHUB_STEP_SUMMARY
+        echo "- Status: ✅ Success" >> $GITHUB_STEP_SUMMARY
+        echo "- URL: ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📦 Content" >> $GITHUB_STEP_SUMMARY
+        echo "- Top page: index.html" >> $GITHUB_STEP_SUMMARY
+        echo "- Examples: examples/" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📄 Downloads (Artifacts)" >> $GITHUB_STEP_SUMMARY
+        echo "PDF and DOCX files are available as artifacts:" >> $GITHUB_STEP_SUMMARY
+        echo "- Artifact name: \`reports-pdf-docx\`" >> $GITHUB_STEP_SUMMARY
+        echo "- Retention: 90 days" >> $GITHUB_STEP_SUMMARY
+        echo "- Files:" >> $GITHUB_STEP_SUMMARY
+        ls output/downloads/ | while read file; do
+          echo "  - $file" >> $GITHUB_STEP_SUMMARY
+        done
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📝 Note" >> $GITHUB_STEP_SUMMARY
+        echo "This is a template repository. Users fork and create their reports in reports/ directory." >> $GITHUB_STEP_SUMMARY
+
+    - name: Generate build summary for PRs and other events
+      if: github.event_name != 'push' || github.ref != 'refs/heads/main'
+      run: |
+        echo "## 📊 Build Results" >> $GITHUB_STEP_SUMMARY
+        echo "- Status: ✅ Success" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📄 Downloads (Artifacts)" >> $GITHUB_STEP_SUMMARY
+        echo "PDF and DOCX files are available as artifacts:" >> $GITHUB_STEP_SUMMARY
+        echo "- Artifact name: \`reports-pdf-docx\`" >> $GITHUB_STEP_SUMMARY
+        echo "- Retention: 90 days" >> $GITHUB_STEP_SUMMARY
+        echo "- Files:" >> $GITHUB_STEP_SUMMARY
+        ls output/downloads/ | while read file; do
+          echo "  - $file" >> $GITHUB_STEP_SUMMARY
+        done

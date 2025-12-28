@@ -1,0 +1,51 @@
+graph TB
+    subgraph "ユーザーインターフェース"
+        A[ユーザー入力] --> B[入力検証]
+        B --> C{検証OK?}
+        C -->|No| D[エラー表示]
+        C -->|Yes| E[データ処理要求]
+    end
+
+    subgraph "ビジネスロジック層"
+        E --> F[認証チェック]
+        F --> G{権限OK?}
+        G -->|No| H[権限エラー]
+        G -->|Yes| I[ビジネス処理実行]
+    end
+
+    subgraph "データアクセス層"
+        I --> J[データベース接続]
+        J --> K[データ操作]
+        K --> L{処理成功?}
+        L -->|No| M[ロールバック]
+        L -->|Yes| N[コミット]
+    end
+
+    subgraph "外部システム"
+        I --> O[外部API呼び出し]
+        O --> P{API応答OK?}
+        P -->|No| Q[フォールバック処理]
+        P -->|Yes| R[結果統合]
+    end
+
+    subgraph "結果処理"
+        N --> S[成功レスポンス生成]
+        R --> S
+        M --> T[エラーレスポンス生成]
+        Q --> T
+        S --> U[ユーザーへ応答]
+        T --> U
+    end
+
+    %% スタイル定義
+    classDef userInput fill:#e1f5fe
+    classDef business fill:#e8f5e8
+    classDef data fill:#fce4ec
+    classDef external fill:#fff3e0
+    classDef result fill:#f3e5f5
+
+    class A,B,C,D,E userInput
+    class F,G,H,I business
+    class J,K,L,M,N data
+    class O,P,Q,R external
+    class S,T,U result
