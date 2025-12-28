@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 300.42203 581.47651"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="報告の基本構造.svg"
+   width="300.42203"
+   height="581.4765"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview18"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.0699981"
+     inkscape:cx="186.4736"
+     inkscape:cy="383.57524"
+     inkscape:window-width="2556"
+     inkscape:window-height="2041"
+     inkscape:window-x="2551"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg18" />
+  <defs
+     id="defs1">
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0,7 0,0 10,3.5 "
+         fill="#2d2d2d"
+         id="polygon1" />
+    </marker>
+  </defs>
+  <!-- Step 1: 結論 -->
+  <rect
+     x="1.114475"
+     y="1.114475"
+     width="298.19308"
+     height="84.970879"
+     fill="#2d2d2d"
+     stroke="#1a1a1a"
+     stroke-width="2.22895"
+     id="rect1" />
+  <text
+     x="150.33601"
+     y="26.015226"
+     text-anchor="middle"
+     font-size="16px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text1">① 結論</text>
+  <text
+     x="150.50984"
+     y="48.015224"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text2">1文で伝える</text>
+  <text
+     x="153.21883"
+     y="71.015228"
+     text-anchor="middle"
+     font-size="10px"
+     fill="#ffffff"
+     id="text3">例：「〇〇の件、完了しました」「問題が発生しました」</text>
+  <!-- Arrow 1→2 -->
+  <line
+     x1="150.21101"
+     y1="86.015228"
+     x2="150.21101"
+     y2="106.01523"
+     stroke="#2d2d2d"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line3" />
+  <!-- Step 2: 状況 -->
+  <rect
+     x="1.114475"
+     y="115.07542"
+     width="298.19308"
+     height="84.970879"
+     fill="#5a5a5a"
+     stroke="#1a1a1a"
+     stroke-width="1.67171"
+     id="rect3" />
+  <text
+     x="150.52351"
+     y="140.01523"
+     text-anchor="middle"
+     font-size="16px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text4">② 状況</text>
+  <text
+     x="150.44539"
+     y="162.01523"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text5">事実を概ね3点以内で</text>
+  <text
+     x="153.21883"
+     y="185.01523"
+     text-anchor="middle"
+     font-size="10px"
+     fill="#ffffff"
+     id="text6">例：「現在〇〇の状態です」「進捗は〇%です」</text>
+  <!-- Arrow 2→3 -->
+  <line
+     x1="150.21101"
+     y1="200.01523"
+     x2="150.21101"
+     y2="220.01523"
+     stroke="#2d2d2d"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line6" />
+  <!-- Step 3: 今後のアクション -->
+  <rect
+     x="1.114475"
+     y="229.03638"
+     width="298.19308"
+     height="84.970879"
+     fill="#808080"
+     stroke="#1a1a1a"
+     stroke-width="1.67171"
+     id="rect6" />
+  <text
+     x="150.58601"
+     y="254.01523"
+     text-anchor="middle"
+     font-size="16px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text7">③ 今後のアクション</text>
+  <text
+     x="149.48445"
+     y="276.0152"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text8">自分が何をするか</text>
+  <text
+     x="153.21883"
+     y="299.0152"
+     text-anchor="middle"
+     font-size="10px"
+     fill="#ffffff"
+     id="text9">例：「次は〇〇をします」「〇日までに完了させます」</text>
+  <!-- Arrow 3→4 -->
+  <line
+     x1="150.21101"
+     y1="314.0152"
+     x2="150.21101"
+     y2="334.0152"
+     stroke="#2d2d2d"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line9" />
+  <!-- Step 4: 依頼・相談 -->
+  <rect
+     x="1.114475"
+     y="342.99731"
+     width="298.19308"
+     height="99.965744"
+     fill="#a0a0a0"
+     stroke="#1a1a1a"
+     stroke-width="1.67171"
+     id="rect9" />
+  <text
+     x="150.36726"
+     y="366.0152"
+     text-anchor="middle"
+     font-size="16px"
+     font-weight="bold"
+     fill="#1a1a1a"
+     id="text10">④ 依頼・相談</text>
+  <text
+     x="153.91414"
+     y="386.0152"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#1a1a1a"
+     id="text11">上司に求めること（必要時）</text>
+  <text
+     x="150.77351"
+     y="404.0152"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#1a1a1a"
+     id="text12">相談したいことがあれば伝える</text>
+  <text
+     x="153.21883"
+     y="429.0152"
+     text-anchor="middle"
+     font-size="10px"
+     fill="#1a1a1a"
+     id="text13">例：「ご確認をお願いします」「ご判断いただけますか」</text>
+  <!-- 例の補足 -->
+  <rect
+     x="1.1166255"
+     y="470.95343"
+     width="298.19308"
+     height="109.96233"
+     rx="9.9397697"
+     fill="#f8f8f8"
+     stroke="#2d2d2d"
+     stroke-width="1.11447"
+     stroke-dasharray="4, 2"
+     id="rect13" />
+  <text
+     x="150.31844"
+     y="493.0152"
+     text-anchor="middle"
+     font-size="11px"
+     font-weight="bold"
+     fill="#1a1a1a"
+     id="text14">報告の例</text>
+  <text
+     x="150.2325"
+     y="515.01526"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#1a1a1a"
+     id="text15">「〇〇の件、完了しました。</text>
+  <text
+     x="153.41219"
+     y="532.01526"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#1a1a1a"
+     id="text16">現在△△の状態です。</text>
+  <text
+     x="153.3907"
+     y="549.01526"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#1a1a1a"
+     id="text17">次は□□をします。</text>
+  <text
+     x="152.63875"
+     y="566.01526"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#1a1a1a"
+     id="text18">ご確認をお願いします」</text>
+</svg>

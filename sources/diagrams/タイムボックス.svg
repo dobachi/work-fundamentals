@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 500 180"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   style="background-color: white;">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2d2d2d"/>
+    </marker>
+    <marker id="arrowhead-dashed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#808080"/>
+    </marker>
+  </defs>
+
+  <!-- 25分集中 -->
+  <rect x="20" y="50" width="100" height="60" rx="8" fill="#2d2d2d" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="70" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">25分</text>
+  <text x="70" y="95" text-anchor="middle" font-size="12" fill="#fff">集中</text>
+
+  <!-- 矢印1 -->
+  <line x1="120" y1="80" x2="145" y2="80" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- 5分休憩 -->
+  <rect x="155" y="50" width="80" height="60" rx="8" fill="#a0a0a0" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="195" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">5分</text>
+  <text x="195" y="95" text-anchor="middle" font-size="12" fill="#1a1a1a">休憩</text>
+
+  <!-- 矢印2 -->
+  <line x1="235" y1="80" x2="260" y2="80" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- 25分集中（2回目） -->
+  <rect x="270" y="50" width="100" height="60" rx="8" fill="#2d2d2d" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="320" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">25分</text>
+  <text x="320" y="95" text-anchor="middle" font-size="12" fill="#fff">集中</text>
+
+  <!-- 矢印3 -->
+  <line x1="370" y1="80" x2="395" y2="80" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- ... -->
+  <text x="420" y="85" text-anchor="middle" font-size="20" font-weight="bold" fill="#2d2d2d">...</text>
+
+  <!-- 繰り返しの矢印（下から回り込む） -->
+  <path d="M 440,80 L 460,80 L 460,140 L 70,140 L 70,120" stroke="#808080" stroke-width="2" fill="none" stroke-dasharray="4,2" marker-end="url(#arrowhead-dashed)"/>
+  <text x="265" y="158" text-anchor="middle" font-size="11" fill="#808080">繰り返す</text>
+
+  <!-- タイマーの注釈 -->
+  <text x="70" y="35" text-anchor="middle" font-size="10" fill="#808080">タイマーをセット</text>
+  <line x1="70" y1="40" x2="70" y2="48" stroke="#808080" stroke-width="1" stroke-dasharray="2,2"/>
+</svg>

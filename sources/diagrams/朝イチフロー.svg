@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 209.5 485.83469"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="朝イチフロー.svg"
+   width="209.5"
+   height="485.83469"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.9805537"
+     inkscape:cx="144.90897"
+     inkscape:cy="362.01997"
+     inkscape:window-width="2556"
+     inkscape:window-height="2041"
+     inkscape:window-x="2551"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg8" />
+  <defs
+     id="defs1">
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="10,3.5 0,7 0,0 "
+         fill="#2d2d2d"
+         id="polygon1" />
+    </marker>
+  </defs>
+  <!-- Step A: 出勤 -->
+  <g
+     id="g8"
+     transform="translate(-7.249998,-19.495869)">
+    <rect
+       x="55.730759"
+       y="20.226624"
+       width="112.53848"
+       height="34.012863"
+       fill="#2d2d2d"
+       stroke="#1a1a1a"
+       stroke-width="1.46151"
+       id="rect1" />
+    <text
+       x="111.8125"
+       y="45"
+       text-anchor="middle"
+       font-size="16px"
+       font-weight="bold"
+       fill="#ffffff"
+       id="text1">出勤</text>
+  </g>
+  <!-- Arrow A→B -->
+  <line
+     x1="104.75"
+     y1="41.040382"
+     x2="104.75"
+     y2="92.040382"
+     stroke="#2d2d2d"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line1" />
+  <!-- Step B: 連絡確認 15分 -->
+  <g
+     id="g9"
+     transform="translate(-7.249998,-23.789074)">
+    <rect
+       x="39.832664"
+       y="123.97813"
+       width="144.33467"
+       height="52.989223"
+       fill="#f8f8f8"
+       stroke="#2d2d2d"
+       stroke-width="1.16533"
+       id="rect2" />
+    <text
+       x="111.9375"
+       y="145.50743"
+       text-anchor="middle"
+       font-size="16px"
+       font-weight="bold"
+       fill="#1a1a1a"
+       id="text2">連絡確認</text>
+    <text
+       x="111.69238"
+       y="169.50743"
+       text-anchor="middle"
+       font-size="14px"
+       fill="#1a1a1a"
+       id="text3">15分</text>
+  </g>
+  <!-- Arrow B→C -->
+  <line
+     x1="104.75"
+     y1="159.32695"
+     x2="104.75"
+     y2="210.32695"
+     stroke="#2d2d2d"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line3" />
+  <!-- Step C: 今日のタスク確認 10分 -->
+  <g
+     id="g10"
+     transform="translate(-7.249998,-21.727278)">
+    <rect
+       x="7.832458"
+       y="240.2027"
+       width="208.33508"
+       height="52.989632"
+       fill="#f8f8f8"
+       stroke="#2d2d2d"
+       stroke-width="1.16492"
+       id="rect3" />
+    <text
+       x="111.84375"
+       y="261.37521"
+       text-anchor="middle"
+       font-size="16px"
+       font-weight="bold"
+       fill="#1a1a1a"
+       id="text4">今日のタスク確認</text>
+    <text
+       x="111.69238"
+       y="285.37521"
+       text-anchor="middle"
+       font-size="14px"
+       fill="#1a1a1a"
+       id="text5">10分</text>
+  </g>
+  <!-- Arrow C→D -->
+  <line
+     x1="104.75"
+     y1="277.61349"
+     x2="104.75"
+     y2="328.61349"
+     stroke="#2d2d2d"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line5" />
+  <!-- Step D: 優先順位決め 10分 -->
+  <g
+     id="g11"
+     transform="translate(-7.249998,-20.736582)">
+    <rect
+       x="23.832542"
+       y="357.49866"
+       width="176.33492"
+       height="52.989464"
+       fill="#f8f8f8"
+       stroke="#2d2d2d"
+       stroke-width="1.16509"
+       id="rect5" />
+    <text
+       x="112.4375"
+       y="379.38513"
+       text-anchor="middle"
+       font-size="16px"
+       font-weight="bold"
+       fill="#1a1a1a"
+       id="text6">優先順位決め</text>
+    <text
+       x="111.69238"
+       y="403.38513"
+       text-anchor="middle"
+       font-size="14px"
+       fill="#1a1a1a"
+       id="text7">10分</text>
+  </g>
+  <!-- Arrow D→E -->
+  <line
+     x1="104.75"
+     y1="395.90009"
+     x2="104.75"
+     y2="446.90009"
+     stroke="#2d2d2d"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line7" />
+  <!-- Step E: 作業開始 -->
+  <g
+     id="g12"
+     transform="translate(-7.249998,-19.495869)">
+    <rect
+       x="39.686104"
+       y="474.64807"
+       width="144.62779"
+       height="29.996389"
+       fill="#2d2d2d"
+       stroke="#1a1a1a"
+       stroke-width="1.3722"
+       id="rect7" />
+    <text
+       x="112.03125"
+       y="493.75372"
+       text-anchor="middle"
+       font-size="16px"
+       font-weight="bold"
+       fill="#ffffff"
+       id="text8">作業開始</text>
+  </g>
+</svg>

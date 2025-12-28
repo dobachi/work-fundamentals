@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 550 280"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   style="background-color: white;">
+
+  <!-- タイトル -->
+  <text x="275" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">1日のスケジュール例</text>
+
+  <!-- 時間軸 -->
+  <line x1="120" y1="50" x2="530" y2="50" stroke="#2d2d2d" stroke-width="2"/>
+  <text x="120" y="45" text-anchor="middle" font-size="10" fill="#1a1a1a">9:00</text>
+  <text x="170" y="45" text-anchor="middle" font-size="10" fill="#1a1a1a">10:00</text>
+  <text x="270" y="45" text-anchor="middle" font-size="10" fill="#1a1a1a">12:00</text>
+  <text x="320" y="45" text-anchor="middle" font-size="10" fill="#1a1a1a">13:00</text>
+  <text x="420" y="45" text-anchor="middle" font-size="10" fill="#1a1a1a">15:00</text>
+  <text x="520" y="45" text-anchor="middle" font-size="10" fill="#1a1a1a">17:00</text>
+
+  <!-- 午前セクション -->
+  <text x="60" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">午前</text>
+
+  <!-- 連絡確認・タスク整理 9:00-10:00 -->
+  <rect x="120" y="65" width="50" height="35" fill="#a0a0a0" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="145" y="80" text-anchor="middle" font-size="8" fill="#1a1a1a">連絡確認</text>
+  <text x="145" y="92" text-anchor="middle" font-size="8" fill="#1a1a1a">タスク整理</text>
+
+  <!-- 資料作成（集中）10:00-12:00 -->
+  <rect x="170" y="65" width="100" height="35" fill="#2d2d2d" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="220" y="80" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">資料作成</text>
+  <text x="220" y="92" text-anchor="middle" font-size="9" fill="#fff">（集中）</text>
+
+  <!-- 昼セクション -->
+  <text x="60" y="135" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">昼</text>
+
+  <!-- 昼休み 12:00-13:00 -->
+  <rect x="270" y="115" width="50" height="35" fill="#d0d0d0" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="295" y="137" text-anchor="middle" font-size="9" fill="#1a1a1a">昼休み</text>
+
+  <!-- 午後セクション -->
+  <text x="60" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">午後</text>
+
+  <!-- 調査（集中）13:00-15:00 -->
+  <rect x="320" y="165" width="100" height="35" fill="#2d2d2d" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="370" y="180" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">調査</text>
+  <text x="370" y="192" text-anchor="middle" font-size="9" fill="#fff">（集中）</text>
+
+  <!-- 会議・打ち合わせ 15:00-17:00 -->
+  <rect x="420" y="165" width="100" height="35" fill="#a0a0a0" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="470" y="180" text-anchor="middle" font-size="9" fill="#1a1a1a">会議</text>
+  <text x="470" y="192" text-anchor="middle" font-size="9" fill="#1a1a1a">打ち合わせ</text>
+
+  <!-- 振り返り 17:00-18:00 -->
+  <rect x="520" y="165" width="25" height="35" fill="#d0d0d0" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="532" y="185" text-anchor="middle" font-size="7" fill="#1a1a1a" transform="rotate(-90, 532, 185)">振り返り</text>
+
+  <!-- 凡例 -->
+  <rect x="120" y="230" width="20" height="15" fill="#2d2d2d" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="150" y="242" font-size="11" fill="#1a1a1a">集中時間（会議を入れない）</text>
+
+  <rect x="300" y="230" width="20" height="15" fill="#a0a0a0" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="330" y="242" font-size="11" fill="#1a1a1a">通常作業</text>
+
+  <rect x="420" y="230" width="20" height="15" fill="#d0d0d0" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="450" y="242" font-size="11" fill="#1a1a1a">休憩・雑務</text>
+
+  <!-- 注釈 -->
+  <text x="275" y="270" text-anchor="middle" font-size="10" fill="#808080">※ 濃い部分は「集中時間」= 会議を入れない</text>
+</svg>
