@@ -29,3 +29,14 @@ format:
     toc-depth: 3
     number-sections: true
     lang: ja
+
+  pdf:
+    documentclass: ltjsbook
+    toc: true
+    number-sections: true
+    geometry: margin=2cm
+    pdf-engine: lualatex
+    include-in-header:
+      - text: |
+          \usepackage{luatexja-fontspec}
+          \setmainjfont{Noto Sans CJK JP}
