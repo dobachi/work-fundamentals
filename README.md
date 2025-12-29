@@ -47,37 +47,11 @@
 - 月次のチェックリスト
 - プロジェクト開始時のチェックリスト
 
-## クイックスタート
+## ガイドを読む
 
-### 1. 環境セットアップ
+このガイドはGitHub Pagesで公開されています：
 
-```bash
-# リポジトリをクローン
-git clone https://github.com/dobachi/work-fundamentals.git
-cd work-fundamentals
-
-# サブモジュールを初期化
-git submodule update --init --recursive
-```
-
-### 2. ビルド
-
-```bash
-# HTMLとPDFをビルド
-make report
-
-# HTMLのみ
-make report-html
-
-# プレビュー
-make preview
-```
-
-### 3. 出力確認
-
-```bash
-ls output/
-```
+**📖 [仕事の基礎ガイドを読む](https://dobachi.github.io/work-fundamentals/)**
 
 ## プロジェクト構造
 
@@ -93,7 +67,23 @@ work-fundamentals/
 └── README.md                # このファイル
 ```
 
-## AI支援について
+## 開発者向け情報
+
+### ローカルでビルドする場合
+
+```bash
+# リポジトリをクローン
+git clone https://github.com/dobachi/work-fundamentals.git
+cd work-fundamentals
+
+# HTMLとPDFをビルド
+make report
+
+# プレビュー
+make preview
+```
+
+### AI支援
 
 このリポジトリはAIアシスタント（Claude、Cursor、Geminiなど）と連携できます。
 `instructions/PROJECT.md` にAI向けの指示が記載されています。

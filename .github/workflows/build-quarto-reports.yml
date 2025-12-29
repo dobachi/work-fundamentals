@@ -13,18 +13,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
-    name: Build Work Guide and Deploy to GitHub Pages
+  build:
+    name: Build Work Guide
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
     - name: Checkout repository
@@ -69,23 +60,45 @@ jobs:
         ls -la output/ || echo "No output directory"
         find output/ -type f | head -30 || true
 
-    - name: Setup Pages
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      uses: actions/configure-pages@v4
-
     - name: Upload artifact
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       uses: actions/upload-pages-artifact@v3
       with:
         path: output/
 
+    - name: Generate build summary
+      run: |
+        echo "## 📊 Build Results" >> $GITHUB_STEP_SUMMARY
+        echo "- Status: ✅ Success" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📦 Generated Content" >> $GITHUB_STEP_SUMMARY
+        find output/ -type f -name "*.html" -o -name "*.pdf" | while read file; do
+          echo "  - $file" >> $GITHUB_STEP_SUMMARY
+        done
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
     - name: Deploy to GitHub Pages
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       id: deployment
       uses: actions/deploy-pages@v4
 
     - name: Generate deployment summary
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: |
         echo "## 🚀 Deployment Results" >> $GITHUB_STEP_SUMMARY
         echo "- Status: ✅ Success" >> $GITHUB_STEP_SUMMARY
@@ -94,14 +107,3 @@ jobs:
         echo "### 📦 Content" >> $GITHUB_STEP_SUMMARY
         echo "- Top page: index.html" >> $GITHUB_STEP_SUMMARY
         echo "- Work Guide: reports/work-guide.html" >> $GITHUB_STEP_SUMMARY
-
-    - name: Generate build summary for PRs and other events
-      if: github.event_name != 'push' || github.ref != 'refs/heads/main'
-      run: |
-        echo "## 📊 Build Results" >> $GITHUB_STEP_SUMMARY
-        echo "- Status: ✅ Success" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### 📦 Generated Content" >> $GITHUB_STEP_SUMMARY
-        find output/ -type f -name "*.html" | while read file; do
-          echo "  - $file" >> $GITHUB_STEP_SUMMARY
-        done
