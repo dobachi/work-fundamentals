@@ -2,15 +2,8 @@ project:
   type: website
   output-dir: output
   render:
-    - "reports/"
-    - "!examples/"
-    - "!templates/"
-    - "!sources/"
-    - "!dist/"
-    - "!instructions/"
-    - "!CLAUDE*.md"
-    - "!CURSOR*.md"
-    - "!GEMINI*.md"
+    - "index.qmd"
+    - "reports/work-guide.qmd"
 
 website:
   title: "Work Fundamentals - 仕事の基礎ガイド"
