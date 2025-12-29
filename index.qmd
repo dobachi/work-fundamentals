@@ -35,10 +35,10 @@ subtitle: "仕事の基礎ガイド - 自律的に動けるようになるため
 ::: {.callout-note}
 ## よくある困りごと
 
-- 「何から手をつければいいか分からない」 → [朝イチでやること](reports/work-guide.html#朝イチでやること)
-- 「報告の仕方が分からない」 → [報告の仕方](reports/work-guide.html#報告の仕方)
-- 「タスクが多すぎて整理できない」 → [タスク管理の基本](reports/work-guide.html#タスク管理の基本ルール)
-- 「30分以上詰まっている」 → [30分ルール](reports/work-guide.html#時間を区切って作業する)
+- 「何から手をつければいいか分からない」 → [朝イチでやること](reports/work-guide.html#morning-routine)
+- 「報告の仕方が分からない」 → [報告の仕方](reports/work-guide.html#reporting)
+- 「タスクが多すぎて整理できない」 → [タスク管理の基本](reports/work-guide.html#task-management)
+- 「30分以上詰まっている」 → [30分ルール](reports/work-guide.html#time-management)
 :::
 
 ### 開発者向け
