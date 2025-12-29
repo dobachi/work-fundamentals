@@ -105,6 +105,7 @@ credentials/
 
 # ユーザーの報告書（git管理外、ローカル作業用）
 reports/*.qmd
+!reports/work-guide.qmd
 !reports/README.md
 !reports/.gitkeep
 reports/*_files/

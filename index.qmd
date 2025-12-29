@@ -1,295 +1,144 @@
 ---
-title: "ResearchTemplate"
-subtitle: "調査報告書作成テンプレート - 使い方ガイド"
+title: "Work Fundamentals"
+subtitle: "仕事の基礎ガイド - 自律的に動けるようになるための実践ガイド"
 ---
 
-## 概要
+## ようこそ
 
-このプロジェクトは、Quartoを使用した調査報告書作成のテンプレートリポジトリです。
-高品質な調査報告書を効率的に作成するためのツールとワークフローを提供します。
+このガイドは、新人・若手社員（入社1〜3年目）のための「仕事の基礎」を学ぶ実践的なガイドです。
 
 ::: {.callout-tip}
-## サンプルも使い方ガイドです
+## このガイドの目的
 
-[技術動向調査報告書](examples/technology-survey.html)は、Quartoの各種機能（数式、図表、参考文献等）の実例を示すサンプルであり、同時にQuartoの使い方を学べるガイドとしても機能します。
+**受動的（reactive）→ 主体的（proactive）への成長を支援する**
+
+- 「指示がないと動けない」→「自分で考えて動ける」
+- 「報告の仕方が分からない」→「適切に報告・相談できる」
 :::
 
 ## 特徴
 
-- 📝 **シンプル**: Markdown記法で簡単に記述
-- 🎨 **高品質**: プロフェッショナルなデザイン
-- 📚 **多様な出力**: HTML / PDF / EPUB対応
-- 🔗 **参考文献管理**: BibTeX統合
-- 🤖 **自動化**: GitHub Actions対応
-- 📦 **配布機能**: 報告書をZIPパッケージ化
+- 📋 **実践的**: すぐに使えるテンプレートとチェックリスト
+- 🎯 **具体的**: 良い例・悪い例を対比で示す
+- 🔄 **段階的**: 日常業務からプロジェクト遂行まで
+- ✅ **チェック機能**: 日次・週次・月次のチェックリスト付き
+- 🤝 **寄り添う**: 上から目線ではなく、一緒に考えるトーン
 
-## クイックスタート
+## このガイドの使い方
 
-### 1. リポジトリの準備
+### すぐに読みたい方
 
-```bash
-# このリポジトリをfork/cloneまたはテンプレートから作成
-git clone https://github.com/dobachi/ResearchTemplate.git
-cd ResearchTemplate
-```
+- **[仕事の基礎ガイド](reports/work-guide.html)** - メインガイドを読む
 
-### 2. 環境セットアップ（初回のみ）
-
-#### 🚀 ワンライナーセットアップ（推奨）
-
-すべての依存関係（Quarto、日本語LaTeX、submodule）を自動インストール：
-
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/dobachi/ResearchTemplate/main/scripts/setup.sh)
-```
-
-または、既にクローン済みの場合：
-
-```bash
-scripts/setup.sh
-```
+### 場面別クイックリンク
 
 ::: {.callout-note}
-## 自動インストールされるもの
+## よくある困りごと
 
-- ✅ Git submodule（AI指示書システム）
-- ✅ Pandoc（必須）
-- ✅ Quarto（対話的にインストール確認）
-- ✅ 日本語LaTeX環境（TeX Live / MacTeX + Noto CJK フォント）
-- ✅ その他の依存パッケージ
-
-**対応OS:** Ubuntu/Debian、RedHat/Fedora、macOS
+- 「何から手をつければいいか分からない」 → [朝イチでやること](reports/work-guide.html#朝イチでやること)
+- 「報告の仕方が分からない」 → [報告の仕方](reports/work-guide.html#報告の仕方)
+- 「タスクが多すぎて整理できない」 → [タスク管理の基本](reports/work-guide.html#タスク管理の基本ルール)
+- 「30分以上詰まっている」 → [30分ルール](reports/work-guide.html#時間を区切って作業する)
 :::
 
-#### 手動セットアップ
+### 開発者向け
 
-最小限の設定のみ行う場合：
-
-```bash
-# Git submoduleの初期化のみ
-git submodule update --init --recursive
-```
-
-### 3. 報告書を作成
+このガイドをローカルでビルドする場合：
 
 ```bash
-# テンプレートをコピー
-cp templates/report_template.qmd reports/my-research.qmd
+# リポジトリをクローン
+git clone https://github.com/dobachi/work-fundamentals.git
+cd work-fundamentals
 
-# エディタで編集
-vim reports/my-research.qmd
-```
-
-### 4. ビルド
-
-```bash
-# HTML + PDFでビルド
+# HTMLとPDFをビルド
 make report
 
-# 成果物を確認
-ls output/
+# プレビュー
+make preview
 ```
 
-### 5. 配布パッケージ作成
+## ガイドの構成
 
-```bash
-# 報告書をZIPパッケージ化（成果物 + ソース）
-make package
+### Part 1: 日常業務編
 
-# dist/に生成されます
-ls dist/
+毎日の仕事で使える実践的なテクニック
+
+- **朝イチでやること** - 毎日のルーティン
+- **タスク管理の基本ルール** - 4象限マトリクス、「やらない」の判断基準
+- **報告の仕方** - 基本構造、場面別テンプレート、良い例・悪い例
+- **時間を区切って作業する** - 30分ルール、タイムボックス
+
+### Part 2: プロジェクト遂行編
+
+プロジェクトで成果を出すためのアプローチ
+
+- **プロジェクト参加時の心構え** - 作業計画書、分からないことリスト
+- **タスク遂行のフロー** - 計画→実行→報告のサイクル
+- **会議の参加の仕方** - 参加者として、ファシリテーターとして
+- **成果物作成のポイント** - 60%で見せる、フィードバックを活かす
+
+### Part 3: 困ったときの対処法
+
+よくある困りごとと解決策
+
+- **よくある困りごと** - 「何をすればいいか分からない」「タスクが終わらない」など
+- **上司との1on1の活用** - 効果的な相談の仕方
+
+### 付録: チェックリスト
+
+- **日次チェックリスト** - 朝・夕方にやること
+- **週次チェックリスト** - 週初・週末にやること
+- **月次チェックリスト** - 月初・月末にやること
+- **プロジェクト開始時チェックリスト** - プロジェクト参加時に確認すること
+
+## このガイドが想定する読者
+
+- 入社1〜3年目の若手社員
+- 「何をすればいいか分からない」と感じることがある
+- 指示待ちになりがち、一人で抱え込みやすい
+- 報告・相談・タスク管理・時間管理に課題がある
+
+## 重要なキーワード
+
+| 概念 | 説明 |
+|------|------|
+| **自律的** | 指示を待たずに自分で考えて動ける |
+| **30分ルール** | 30分詰まったら相談する |
+| **4象限マトリクス** | 緊急度×重要度でタスクを分類 |
+| **結論から話す** | 報告の基本構造 |
+| **60%で見せる** | 完璧を目指さず早めに共有 |
+
+## 開発者向け情報
+
+### ディレクトリ構造
+
 ```
-
-## ディレクトリ構造
-
-```
-ResearchTemplate/
-├── templates/          # テンプレートファイル
-│   ├── report_template.qmd
-│   └── styles/
-├── reports/            # ユーザーの報告書（あなたが作成）
-│   └── .gitkeep
-├── examples/           # サンプル報告書
-│   └── technology-survey.qmd
+work-fundamentals/
+├── reports/            # ガイド本文
+│   └── work-guide.qmd
 ├── sources/            # リソース
-│   ├── references/    # 参考文献（.bib）
-│   └── diagrams/      # 図表ソース
-├── output/             # ビルド成果物
-├── dist/               # 配布パッケージ
-└── Makefile            # ビルドツール
+│   └── diagrams/      # 図表ソース（SVG）
+├── output/             # ビルド成果物（GitHub Pagesで公開）
+└── scripts/            # ビルドスクリプト
 ```
 
-## 基本コマンド
+### ビルドコマンド
 
 ```bash
-make help              # ヘルプ表示
-make report            # 報告書をビルド（HTML + PDF）
-make package           # 配布パッケージ作成
+make report            # HTML + PDF をビルド
 make preview           # ライブプレビュー
 make clean             # ビルド成果物削除
 ```
 
-## ワークフロー
+### GitHub Pages
 
-### 開発フロー
-
-```bash
-# 1. テンプレートをコピー
-cp templates/report_template.qmd reports/my-research.qmd
-
-# 2. ライブプレビュー開始
-make preview
-# ブラウザで http://localhost:xxxx が自動で開きます
-
-# 3. my-research.qmdを編集
-# 保存すると自動的に再ビルド＆ブラウザ更新
-
-# 4. 最終ビルド
-make report
-```
-
-### 配布フロー
-
-```bash
-# 1. ビルド（まだの場合）
-make report
-
-# 2. パッケージ作成
-make package
-
-# 3. 配布
-# dist/research-report-YYYYMMDD.zip を共有
-```
-
-## プロジェクト設計
-
-### テンプレートと報告書の分離
-
-- **templates/** = テンプレートファイル（リポジトリに含まれる、コピー元）
-- **reports/** = ユーザーの報告書（git管理外、ローカル作業用）
-- **examples/** = サンプル（GitHub Pages表示用）
-
-### パッケージの内容
-
-`make package`で作成されるZIPには以下が含まれます：
-
-- **formats/** - 成果物（HTML/PDF/EPUB）
-- **sources/** - 報告書ソース（.qmd）
-- **references/** - 参考文献（.bib）
-- **diagrams/** - 図表ソース
-- **README.md** - パッケージの説明
-
-**テンプレートやビルドツールは含まれません**（報告書配布のため）
-
-## AI指示書システム（オプション）
-
-このプロジェクトは[AI指示書システム](https://github.com/your-org/ai_instruction_kits)をgitサブモジュールとして任意で導入できます。
-
-### 対応AIツール
-
-- Claude Code（推奨）
-- Cursor
-- その他のAIコーディングアシスタント
-
-### セットアップ（任意）
-
-AI指示書システムを使用する場合、gitサブモジュールとして追加します：
-
-```bash
-# AI指示書システムをサブモジュールとして追加
-git submodule add https://github.com/your-org/ai_instruction_kits.git instructions/ai_instruction_kits
-git submodule update --init --recursive
-```
-
-### 使い方
-
-AIツールを使用する場合、自動的に以下のファイルが読み込まれます：
-
-- `CLAUDE.md` - Claude Code用の設定
-- `CURSOR.md` - Cursor用の設定
-- `instructions/PROJECT.md` - プロジェクト固有の指示
-
-### 主な機能
-
-- **品質基準の自動適用**: 事実と考察の区別、参考文献管理等
-- **チェックポイント管理**: `scripts/checkpoint.sh`で作業履歴を記録
-- **ビルドコマンド統合**: Quartoビルドシステムとの連携
-
-詳細は[CLAUDE.md](CLAUDE.md)を参照してください。
-
-## GitHub Actions
-
-mainブランチへのpush時に自動実行：
-
-- examples/とindex.qmdをビルド
-- GitHub Pagesにデプロイ
-
-ユーザーの報告書（reports/）は各自のforkでビルドします。
-
-## 要件
-
-### 必須
-
-- [Quarto](https://quarto.org/docs/get-started/) 1.3以上
-- Git
-- Pandoc
-
-### 推奨（PDF生成用）
-
-- LuaLaTeX（日本語PDF対応）
-- luatexja（日本語組版パッケージ）
-- Noto Sans CJK JP フォント（日本語対応）
-
-### 🚀 自動インストール（推奨）
-
-すべての依存関係をワンライナーで自動インストール：
-
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/dobachi/ResearchTemplate/main/scripts/setup.sh)
-```
-
-::: {.callout-tip}
-## セットアップスクリプトの特徴
-
-- OS自動検出（Ubuntu/Debian、RedHat/Fedora、macOS対応）
-- 対話的なインストール確認
-- Git submodule自動初期化
-- 日本語LaTeX環境の完全セットアップ
-:::
-
-**対応OS:** Ubuntu/Debian、RedHat/Fedora、macOS
-
-### 手動インストール例（Ubuntu/Debian）
-
-```bash
-# Quarto
-wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.549/quarto-1.4.549-linux-amd64.deb
-sudo dpkg -i quarto-1.4.549-linux-amd64.deb
-
-# LaTeX + フォント（PDF生成用）
-sudo apt-get install texlive-luatex texlive-lang-japanese fonts-noto-cjk
-```
-
-## 技術スタック
-
-- **[Quarto](https://quarto.org)**: 科学技術出版システム
-- **Markdown**: 軽量マークアップ言語
-- **LaTeX**: 数式・PDF生成
-- **BibTeX**: 参考文献管理
-- **Make**: ビルド自動化
-- **GitHub Actions**: CI/CD
+このガイドは GitHub Pages で公開されています。mainブランチへのpush時に自動的にビルド・デプロイされます。
 
 ## ライセンス
 
-[Apache-2.0](LICENSE)
+Apache-2.0
 
 ## サポート
 
-- [Issues](https://github.com/dobachi/ResearchTemplate/issues)
-- [GitHub リポジトリ](https://github.com/dobachi/ResearchTemplate)
-
-## 関連リンク
-
-- [Quarto公式ドキュメント](https://quarto.org/docs/guide/)
-- [Markdown記法](https://www.markdownguide.org/)
-- [BibTeX形式](https://www.bibtex.org/)
+- [Issues](https://github.com/dobachi/work-fundamentals/issues)
+- [GitHub リポジトリ](https://github.com/dobachi/work-fundamentals)
