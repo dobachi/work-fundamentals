@@ -54,6 +54,11 @@ jobs:
         quarto render
         echo "✅ Build complete"
 
+    - name: Add .nojekyll to output
+      run: |
+        cp .nojekyll output/ || touch output/.nojekyll
+        echo "Added .nojekyll to output directory"
+
     - name: List output
       run: |
         echo "Generated files:"
