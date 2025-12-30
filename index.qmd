@@ -116,19 +116,21 @@ subtitle: "仕事の基礎ガイド - 自律的に動けるようになるため
 
 ### ローカル開発環境のセットアップ
 
-このガイドをローカルでビルドする場合：
+このガイドをローカルでビルド・編集する場合：
 
 ```bash
 # 1. リポジトリをクローン
 git clone https://github.com/dobachi/work-fundamentals.git
 cd work-fundamentals
 
-# 2. ビルド（HTMLとPDF）
+# 2. ガイドをビルド（HTMLとPDF）
 make report
 
-# 3. ライブプレビュー
+# 3. ブラウザでライブプレビュー
 make preview
 ```
+
+> **ヒント**: `make preview` を使うと、ファイルを編集するたびに自動的にブラウザが更新されます。
 
 ### ディレクトリ構造
 
@@ -146,13 +148,15 @@ work-fundamentals/
 
 ### 利用可能なMakeコマンド
 
-| コマンド | 説明 |
-|----------|------|
-| `make report` | HTMLとPDFをビルド |
-| `make report-html` | HTMLのみビルド |
-| `make report-pdf` | PDFのみビルド |
-| `make preview` | ライブプレビュー起動 |
-| `make clean` | ビルド成果物削除 |
+> **注**: コマンド名に`report`とありますが、これはテンプレートベースの名残です。実際には「ガイド」をビルドします。
+
+| コマンド | 実際の動作 |
+|----------|-----------|
+| `make report` | ガイドをHTMLとPDF形式でビルド |
+| `make report-html` | ガイドをHTML形式のみでビルド |
+| `make report-pdf` | ガイドをPDF形式のみでビルド |
+| `make preview` | ブラウザでライブプレビュー起動 |
+| `make clean` | ビルド成果物を削除してクリーンアップ |
 
 ### GitHub Pagesへのデプロイ
 
