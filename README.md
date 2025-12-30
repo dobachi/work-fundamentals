@@ -6,6 +6,8 @@
 
 **[→ 仕事の基礎ガイドを読む](https://dobachi.github.io/work-fundamentals/)**
 
+**ダウンロード**: [PDF](https://dobachi.github.io/work-fundamentals/reports/work-guide.pdf) | [Word](https://dobachi.github.io/work-fundamentals/reports/work-guide.docx)
+
 ---
 
 ## このガイドについて
@@ -88,7 +90,7 @@ work-fundamentals/
 git clone https://github.com/dobachi/work-fundamentals.git
 cd work-fundamentals
 
-# HTMLとPDFをビルド
+# HTML・PDF・Wordをビルド
 make build
 
 # ライブプレビュー
@@ -99,9 +101,10 @@ make preview
 
 | コマンド | 説明 |
 |----------|------|
-| `make build` | ガイドをHTMLとPDF形式でビルド |
+| `make build` | ガイドをHTML・PDF・Word形式でビルド |
 | `make html` | ガイドをHTML形式のみでビルド |
 | `make pdf` | ガイドをPDF形式のみでビルド |
+| `make docx` | ガイドをWord形式のみでビルド |
 | `make preview` | ブラウザでライブプレビュー起動 |
 | `make clean` | ビルド成果物を削除 |
 

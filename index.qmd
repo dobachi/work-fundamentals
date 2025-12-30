@@ -7,6 +7,8 @@ subtitle: "仕事の基礎ガイド - 自律的に動けるようになるため
 ## 📘 ガイドを読む
 
 **[→ 仕事の基礎ガイドを読む](reports/work-guide.html)**
+
+**ダウンロード**: [PDF](reports/work-guide.pdf) | [Word](reports/work-guide.docx)
 :::
 
 ## ようこそ
@@ -150,9 +152,10 @@ work-fundamentals/
 
 | コマンド | 説明 |
 |----------|------|
-| `make build` | ガイドをHTMLとPDF形式でビルド |
+| `make build` | ガイドをHTML・PDF・Word形式でビルド |
 | `make html` | ガイドをHTML形式のみでビルド |
 | `make pdf` | ガイドをPDF形式のみでビルド |
+| `make docx` | ガイドをWord形式のみでビルド |
 | `make preview` | ブラウザでライブプレビュー起動 |
 | `make clean` | ビルド成果物を削除してクリーンアップ |
 
