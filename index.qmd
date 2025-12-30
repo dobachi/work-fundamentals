@@ -124,7 +124,7 @@ git clone https://github.com/dobachi/work-fundamentals.git
 cd work-fundamentals
 
 # 2. ガイドをビルド（HTMLとPDF）
-make report
+make build
 
 # 3. ブラウザでライブプレビュー
 make preview
@@ -148,13 +148,11 @@ work-fundamentals/
 
 ### 利用可能なMakeコマンド
 
-> **注**: コマンド名に`report`とありますが、これはテンプレートベースの名残です。実際には「ガイド」をビルドします。
-
-| コマンド | 実際の動作 |
-|----------|-----------|
-| `make report` | ガイドをHTMLとPDF形式でビルド |
-| `make report-html` | ガイドをHTML形式のみでビルド |
-| `make report-pdf` | ガイドをPDF形式のみでビルド |
+| コマンド | 説明 |
+|----------|------|
+| `make build` | ガイドをHTMLとPDF形式でビルド |
+| `make html` | ガイドをHTML形式のみでビルド |
+| `make pdf` | ガイドをPDF形式のみでビルド |
 | `make preview` | ブラウザでライブプレビュー起動 |
 | `make clean` | ビルド成果物を削除してクリーンアップ |
 
