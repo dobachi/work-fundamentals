@@ -3,9 +3,15 @@ title: "Work Fundamentals"
 subtitle: "仕事の基礎ガイド - 自律的に動けるようになるための実践ガイド"
 ---
 
+::: {.callout-important}
+## 📘 ガイドを読む
+
+**[→ 仕事の基礎ガイドを読む](reports/work-guide.html)**
+:::
+
 ## ようこそ
 
-このガイドは、新人・若手社員（入社1〜3年目）のための「仕事の基礎」を学ぶ実践的なガイドです。
+このガイドは、「何をすればいいか分からない」「報告の仕方が分からない」と感じている方のための実践的なガイドです。
 
 ::: {.callout-tip}
 ## このガイドの目的
@@ -14,6 +20,7 @@ subtitle: "仕事の基礎ガイド - 自律的に動けるようになるため
 
 - 「指示がないと動けない」→「自分で考えて動ける」
 - 「報告の仕方が分からない」→「適切に報告・相談できる」
+- 「タスクに追われる」→「優先順位をつけて取り組める」
 :::
 
 ## 特徴
@@ -24,13 +31,7 @@ subtitle: "仕事の基礎ガイド - 自律的に動けるようになるため
 - ✅ **チェック機能**: 日次・週次・月次のチェックリスト付き
 - 🤝 **寄り添う**: 上から目線ではなく、一緒に考えるトーン
 
-## このガイドの使い方
-
-### すぐに読みたい方
-
-- **[仕事の基礎ガイド](reports/work-guide.html)** - メインガイドを読む
-
-### 場面別クイックリンク
+## 困ったときはここから
 
 ::: {.callout-note}
 ## よくある困りごと
@@ -40,22 +41,6 @@ subtitle: "仕事の基礎ガイド - 自律的に動けるようになるため
 - 「タスクが多すぎて整理できない」 → [タスク管理の基本](reports/work-guide.html#task-management)
 - 「30分以上詰まっている」 → [30分ルール](reports/work-guide.html#time-management)
 :::
-
-### 開発者向け
-
-このガイドをローカルでビルドする場合：
-
-```bash
-# リポジトリをクローン
-git clone https://github.com/dobachi/work-fundamentals.git
-cd work-fundamentals
-
-# HTMLとPDFをビルド
-make report
-
-# プレビュー
-make preview
-```
 
 ## ガイドの構成
 
@@ -93,10 +78,12 @@ make preview
 
 ## このガイドが想定する読者
 
-- 入社1〜3年目の若手社員
-- 「何をすればいいか分からない」と感じることがある
-- 指示待ちになりがち、一人で抱え込みやすい
-- 報告・相談・タスク管理・時間管理に課題がある
+- 仕事の進め方に悩んでいる方
+- 「何をすればいいか分からない」と感じることがある方
+- 指示待ちになりがち、一人で抱え込みやすい方
+- 報告・相談・タスク管理・時間管理を改善したい方
+
+**特に新人・若手社員の方に役立つ内容ですが、経験年数に関わらず仕事の基礎を見直したい方にもおすすめです。**
 
 ## 重要なキーワード
 
@@ -108,37 +95,71 @@ make preview
 | **結論から話す** | 報告の基本構造 |
 | **60%で見せる** | 完璧を目指さず早めに共有 |
 
-## 開発者向け情報
+---
+
+## このガイドを開発・改善したい方へ
+
+以下は、このガイド自体を開発・改善したい方（ドキュメント開発者）向けの情報です。
+
+::: {.callout-warning}
+## 開発者向けセクション
+
+このセクションは**ガイドの内容を読みたい方には不要です**。
+ガイドの内容を修正したり、ローカルでビルドしたりする場合のみご参照ください。
+:::
+
+### リポジトリとライセンス
+
+- **GitHub リポジトリ**: [dobachi/work-fundamentals](https://github.com/dobachi/work-fundamentals)
+- **ライセンス**: Apache-2.0
+- **Issue報告**: [Issues](https://github.com/dobachi/work-fundamentals/issues)
+
+### ローカル開発環境のセットアップ
+
+このガイドをローカルでビルド・編集する場合：
+
+```bash
+# 1. リポジトリをクローン
+git clone https://github.com/dobachi/work-fundamentals.git
+cd work-fundamentals
+
+# 2. ガイドをビルド（HTMLとPDF）
+make build
+
+# 3. ブラウザでライブプレビュー
+make preview
+```
+
+> **ヒント**: `make preview` を使うと、ファイルを編集するたびに自動的にブラウザが更新されます。
 
 ### ディレクトリ構造
 
 ```
 work-fundamentals/
+├── index.qmd           # トップページ（このページ）
 ├── reports/            # ガイド本文
-│   └── work-guide.qmd
+│   └── work-guide.qmd  # メインガイド
 ├── sources/            # リソース
-│   └── diagrams/      # 図表ソース（SVG）
+│   └── diagrams/       # 図表ソース（SVG）
 ├── output/             # ビルド成果物（GitHub Pagesで公開）
-└── scripts/            # ビルドスクリプト
+├── scripts/            # ビルドスクリプト
+└── _quarto.yml         # Quarto設定ファイル
 ```
 
-### ビルドコマンド
+### 利用可能なMakeコマンド
 
-```bash
-make report            # HTML + PDF をビルド
-make preview           # ライブプレビュー
-make clean             # ビルド成果物削除
-```
+| コマンド | 説明 |
+|----------|------|
+| `make build` | ガイドをHTMLとPDF形式でビルド |
+| `make html` | ガイドをHTML形式のみでビルド |
+| `make pdf` | ガイドをPDF形式のみでビルド |
+| `make preview` | ブラウザでライブプレビュー起動 |
+| `make clean` | ビルド成果物を削除してクリーンアップ |
 
-### GitHub Pages
+### GitHub Pagesへのデプロイ
 
-このガイドは GitHub Pages で公開されています。mainブランチへのpush時に自動的にビルド・デプロイされます。
+このガイドは GitHub Pages で自動公開されています。
 
-## ライセンス
-
-Apache-2.0
-
-## サポート
-
-- [Issues](https://github.com/dobachi/work-fundamentals/issues)
-- [GitHub リポジトリ](https://github.com/dobachi/work-fundamentals)
+- **公開URL**: https://dobachi.github.io/work-fundamentals/
+- **デプロイ**: mainブランチへのpush時に自動ビルド・デプロイ
+- **ワークフロー**: `.github/workflows/build-quarto-reports.yml`

@@ -13,68 +13,56 @@ PACKAGE_NAME := research-report-$(shell date +%Y%m%d)
 
 # デフォルトターゲット
 .PHONY: all
-all: examples
+all: build
 
 # ヘルプ表示
 .PHONY: help
 help:
 	@echo "利用可能なコマンド:"
 	@echo ""
-	@echo "【報告書作成】"
-	@echo "  make report          - reports/内のユーザー報告書をビルド（HTML + PDF）"
-	@echo "  make report-html     - reports/内のユーザー報告書をHTMLでビルド"
-	@echo "  make report-pdf      - reports/内のユーザー報告書をPDFでビルド"
-	@echo ""
-	@echo "【サンプル・デモ】"
-	@echo "  make examples        - examples/内のサンプル報告書をビルド（HTML + PDF）"
-	@echo "  make examples-html   - examples/内のサンプル報告書をHTMLでビルド"
-	@echo "  make examples-pdf    - examples/内のサンプル報告書をPDFでビルド"
-	@echo ""
-	@echo "【配布】"
-	@echo "  make package         - 報告書を配布用パッケージ化（成果物 + ソース）"
+	@echo "【ガイドのビルド】"
+	@echo "  make build           - ガイドをビルド（HTML + PDF）"
+	@echo "  make html            - ガイドをHTMLでビルド"
+	@echo "  make pdf             - ガイドをPDFでビルド"
 	@echo ""
 	@echo "【開発・プレビュー】"
 	@echo "  make preview         - ライブプレビュー起動"
 	@echo "  make clean           - ビルド成果物を削除"
 	@echo ""
 	@echo "【使い方】"
-	@echo "  1. cp templates/report_template.qmd reports/my-research.qmd"
-	@echo "  2. vim reports/my-research.qmd  # 報告書を編集"
-	@echo "  3. make report                  # ビルド"
-	@echo "  4. make package                 # 配布用ZIP作成"
+	@echo "  1. vim reports/work-guide.qmd   # ガイドを編集"
+	@echo "  2. make build                   # ビルド"
+	@echo "  3. make preview                 # プレビュー確認"
 
 # ===============================================
-# ユーザー報告書のビルド
+# ガイドのビルド
 # ===============================================
 
-.PHONY: report
-report: report-html report-pdf
-	@echo "✅ 報告書ビルド完了"
+.PHONY: build
+build: html pdf
+	@echo "✅ ガイドビルド完了"
 	@echo "📍 成果物: $(OUTPUT_DIR)/"
 	@find $(OUTPUT_DIR) -maxdepth 1 \( -name "*.html" -o -name "*.pdf" \) -exec ls -lh {} \; 2>/dev/null || echo "  （ファイルなし）"
 
-.PHONY: report-html
-report-html:
-	@echo "📄 reports/内の報告書をHTMLでビルド中..."
-	@if [ -z "$$(find reports -name '*.qmd' -not -name 'README.md' 2>/dev/null)" ]; then \
-		echo "⚠️  reports/内に.qmdファイルがありません"; \
-		echo "   cp templates/report_template.qmd reports/my-research.qmd"; \
-		exit 0; \
-	fi
-	@quarto render reports/ --to html --output-dir $(OUTPUT_DIR)
+.PHONY: html
+html:
+	@echo "📄 ガイドをHTMLでビルド中..."
+	@quarto render --to html --output-dir $(OUTPUT_DIR)
 	@echo "✅ HTML生成完了"
 	@echo "📍 HTML出力先: $(OUTPUT_DIR)/"
 
-.PHONY: report-pdf
-report-pdf:
-	@echo "📋 reports/内の報告書をPDFでビルド中..."
-	@if [ -z "$$(find reports -name '*.qmd' -not -name 'README.md' 2>/dev/null)" ]; then \
-		echo "⚠️  reports/内に.qmdファイルがありません"; \
-		exit 0; \
-	fi
-	@quarto render reports/ --to pdf --output-dir $(OUTPUT_DIR)
+.PHONY: pdf
+pdf:
+	@echo "📋 ガイドをPDFでビルド中..."
+	@quarto render --to pdf --output-dir $(OUTPUT_DIR)
 	@echo "✅ PDF生成完了"
 	@echo "📍 PDF出力先: $(OUTPUT_DIR)/"
+
+# 後方互換性のためのエイリアス
+.PHONY: report report-html report-pdf
+report: build
+report-html: html
+report-pdf: pdf
 
 # ===============================================
 # サンプル報告書のビルド（GitHub Pages表示用）

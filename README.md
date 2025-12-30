@@ -77,7 +77,7 @@ git clone https://github.com/dobachi/work-fundamentals.git
 cd work-fundamentals
 
 # HTMLとPDFをビルド
-make report
+make build
 
 # プレビュー
 make preview
