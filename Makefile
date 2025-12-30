@@ -21,9 +21,10 @@ help:
 	@echo "利用可能なコマンド:"
 	@echo ""
 	@echo "【ガイドのビルド】"
-	@echo "  make build           - ガイドをビルド（HTML + PDF）"
+	@echo "  make build           - ガイドをビルド（HTML + PDF + Word）"
 	@echo "  make html            - ガイドをHTMLでビルド"
 	@echo "  make pdf             - ガイドをPDFでビルド"
+	@echo "  make docx            - ガイドをWord形式でビルド"
 	@echo ""
 	@echo "【開発・プレビュー】"
 	@echo "  make preview         - ライブプレビュー起動"
@@ -39,10 +40,10 @@ help:
 # ===============================================
 
 .PHONY: build
-build: html pdf
+build: html pdf docx
 	@echo "✅ ガイドビルド完了"
 	@echo "📍 成果物: $(OUTPUT_DIR)/"
-	@find $(OUTPUT_DIR) -maxdepth 1 \( -name "*.html" -o -name "*.pdf" \) -exec ls -lh {} \; 2>/dev/null || echo "  （ファイルなし）"
+	@find $(OUTPUT_DIR) -maxdepth 1 \( -name "*.html" -o -name "*.pdf" -o -name "*.docx" \) -exec ls -lh {} \; 2>/dev/null || echo "  （ファイルなし）"
 
 .PHONY: html
 html:
@@ -57,6 +58,13 @@ pdf:
 	@quarto render --to pdf --output-dir $(OUTPUT_DIR)
 	@echo "✅ PDF生成完了"
 	@echo "📍 PDF出力先: $(OUTPUT_DIR)/"
+
+.PHONY: docx
+docx:
+	@echo "📝 ガイドをWord形式でビルド中..."
+	@quarto render --to docx --output-dir $(OUTPUT_DIR)
+	@echo "✅ Word生成完了"
+	@echo "📍 Word出力先: $(OUTPUT_DIR)/"
 
 # 後方互換性のためのエイリアス
 .PHONY: report report-html report-pdf

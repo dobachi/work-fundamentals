@@ -76,7 +76,7 @@ jobs:
         echo "- Status: ✅ Success" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### 📦 Generated Content" >> $GITHUB_STEP_SUMMARY
-        find output/ -type f -name "*.html" -o -name "*.pdf" | while read file; do
+        find output/ -type f \( -name "*.html" -o -name "*.pdf" -o -name "*.docx" \) | while read file; do
           echo "  - $file" >> $GITHUB_STEP_SUMMARY
         done
 
@@ -112,3 +112,4 @@ jobs:
         echo "### 📦 Content" >> $GITHUB_STEP_SUMMARY
         echo "- Top page: index.html" >> $GITHUB_STEP_SUMMARY
         echo "- Work Guide: reports/work-guide.html" >> $GITHUB_STEP_SUMMARY
+        echo "- Downloads: work-guide.pdf, work-guide.docx" >> $GITHUB_STEP_SUMMARY

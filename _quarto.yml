@@ -42,3 +42,9 @@ format:
       - text: |
           \usepackage{luatexja-fontspec}
           \setmainjfont{Noto Sans CJK JP}
+
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+    lang: ja
