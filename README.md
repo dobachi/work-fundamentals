@@ -2,16 +2,24 @@
 
 [English](README.en.md) | 日本語
 
+## 📘 ガイドを読む
+
+**[→ 仕事の基礎ガイドを読む](https://dobachi.github.io/work-fundamentals/)**
+
+---
+
 ## このガイドについて
 
 **「何をすればいいか分からない」「何をどう報告すればいいか分からない」を解消し、自律的に動けるようになる**ための実践ガイドです。
 
 ## 対象読者
 
-- 新人・若手社員（入社1〜3年目）
-- 「指示がないと動けない」と感じている人
-- 報告・相談の仕方に苦手意識がある人
-- タスク管理や時間管理を改善したい人
+- 仕事の進め方に悩んでいる方
+- 「指示がないと動けない」と感じている方
+- 報告・相談の仕方に苦手意識がある方
+- タスク管理や時間管理を改善したい方
+
+**特に新人・若手社員の方に役立つ内容ですが、経験年数に関わらず仕事の基礎を見直したい方にもおすすめです。**
 
 ## このガイドが解決する課題
 
@@ -47,27 +55,31 @@
 - 月次のチェックリスト
 - プロジェクト開始時のチェックリスト
 
-## ガイドを読む
+---
 
-このガイドはGitHub Pagesで公開されています：
+## このガイドを開発・改善したい方へ
 
-**📖 [仕事の基礎ガイドを読む](https://dobachi.github.io/work-fundamentals/)**
+以下は、このガイド自体を開発・改善したい方（ドキュメント開発者）向けの情報です。
 
-## プロジェクト構造
+### リポジトリ情報
+
+- **GitHub**: [dobachi/work-fundamentals](https://github.com/dobachi/work-fundamentals)
+- **公開URL**: https://dobachi.github.io/work-fundamentals/
+- **ライセンス**: Apache-2.0
+
+### プロジェクト構造
 
 ```
 work-fundamentals/
+├── index.qmd                # トップページ
 ├── reports/                 # ガイド本文
 │   └── work-guide.qmd       # メインガイド
 ├── sources/
 │   └── diagrams/            # 図表（SVG形式）
 ├── instructions/            # AI支援用の指示書
-├── templates/               # テンプレート
-├── output/                  # ビルド成果物
+├── output/                  # ビルド成果物（GitHub Pagesで公開）
 └── README.md                # このファイル
 ```
-
-## 開発者向け情報
 
 ### ローカルでビルドする場合
 
@@ -79,18 +91,28 @@ cd work-fundamentals
 # HTMLとPDFをビルド
 make build
 
-# プレビュー
+# ライブプレビュー
 make preview
 ```
+
+#### 利用可能なコマンド
+
+| コマンド | 説明 |
+|----------|------|
+| `make build` | ガイドをHTMLとPDF形式でビルド |
+| `make html` | ガイドをHTML形式のみでビルド |
+| `make pdf` | ガイドをPDF形式のみでビルド |
+| `make preview` | ブラウザでライブプレビュー起動 |
+| `make clean` | ビルド成果物を削除 |
 
 ### AI支援
 
 このリポジトリはAIアシスタント（Claude、Cursor、Geminiなど）と連携できます。
 `instructions/PROJECT.md` にAI向けの指示が記載されています。
 
-## ライセンス
+### デプロイ
 
-Apache-2.0
+mainブランチへのpush時に自動的にGitHub Pagesへビルド・デプロイされます。
 
 ## 作者
 
