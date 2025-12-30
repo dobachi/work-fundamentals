@@ -36,6 +36,7 @@ format:
     documentclass: ltjsbook
     toc: true
     number-sections: true
+    number-offset: 1
     geometry: margin=2cm
     pdf-engine: lualatex
     include-in-header:
