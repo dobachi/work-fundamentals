@@ -8,6 +8,8 @@ project:
 website:
   title: "Work Fundamentals - 仕事の基礎ガイド"
   description: "自律的に動けるようになるための実践ガイド"
+  site-url: "https://dobachi.github.io/work-fundamentals"
+  repo-url: "https://github.com/dobachi/work-fundamentals"
 
   navbar:
     background: primary
